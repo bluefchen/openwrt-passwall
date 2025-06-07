@@ -323,6 +323,12 @@ o.password = true
 o:depends({ [_n("protocol")] = "vmess" })
 o:depends({ [_n("protocol")] = "vless" })
 
+-- 添加 alter_id 字段
+o = s:option(Value, _n("alter_id"), translate("Alter ID"))
+o.datatype = "uinteger"
+o.default = "0"
+o:depends({ [_n("protocol")] = "vmess" })
+
 o = s:option(ListValue, _n("flow"), translate("flow"))
 o.default = ""
 o:value("", translate("Disable"))

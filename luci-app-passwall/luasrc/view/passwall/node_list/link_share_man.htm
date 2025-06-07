@@ -312,6 +312,7 @@ local hysteria2_type = map:get("@global_subscribe[0]", "hysteria2_type") or "sin
 			//info.add = _address;
 			info.port = opt.get(dom_prefix + "port").value;
 			info.id = opt.get(dom_prefix + "uuid").value;
+			info.aid = opt.get(dom_prefix + "alter_id").value;
 
 			var v_transport = opt.get(dom_prefix + "transport").value;
 			if (v_transport === "ws") {
@@ -1140,6 +1141,8 @@ local hysteria2_type = map:get("@global_subscribe[0]", "hysteria2_type") or "sin
 			opt.set(dom_prefix + 'address', ssm.add);
 			opt.set(dom_prefix + 'port', ssm.port);
 			opt.set(dom_prefix + 'uuid', ssm.id);
+			opt.set(dom_prefix + 'alter_id', ssm.aid);
+
 			opt.set(dom_prefix + 'tls', ssm.tls === "tls");
 			if (ssm.tls === "tls") {
 				var tls_serverName = ssm.host;
